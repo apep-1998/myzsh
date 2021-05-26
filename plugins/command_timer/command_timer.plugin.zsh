@@ -33,7 +33,7 @@ function echo_time_duration {
         [ $secs -ne 0 ] && echo_text="$echo_text${secs}s ⏰"
         printf "%*s\n" $(( columns - 2)) "$echo_text"
     fi
-    [ $ALERT_AFTER_FINISH ] && [ $duration_sec -gt $MIN_SEC_ALERT ] && echo -n "\a"
+    [ $ALERT_AFTER_FINISH ] && [ $duration_sec -gt $MIN_SEC_ALERT ] && notify-send -a Terminal "Your command executed in $echo_text"
 
 }
 
